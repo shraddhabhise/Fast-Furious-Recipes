@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Recipes
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.db.models import Q
 
 #Class based views to create forms
 from django.views.generic import (
@@ -32,6 +33,24 @@ def home(request):
         'recipes': Recipes.objects.all()
     }
     return render(request,'recipes/home.html', context)
+
+def search(request):
+    if request.method == "POST":
+        sh = request.POST['srch']
+        print(sh);
+        if sh:
+            match = Recipes.objects.filter(Q(ingredient1__icontains=sh) | Q(ingredient2__icontains=sh) | Q(ingredient3__icontains=sh) | Q(ingredient4__icontains=sh) | Q(ingredient5__icontains=sh))
+
+            context = {'sr': match}
+            print(context)
+            if match:
+                    return render(request, 'recipes/search.html', context)
+            else:
+                return render(request, 'recipes/search.html')
+        else:
+            return render(request, 'recipes/search.html')
+
+    return render(request, 'recipes/search.html')
 
 class RecipesDetailView(DetailView):
     model = Recipes
@@ -68,6 +87,7 @@ class RecipesDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
 
 
 def about(request):

@@ -1,0 +1,30 @@
+
+{% extends "recipes/base.html" %}
+{% block content%}
+  <div class="container">
+      <h1> Search Recipes</h1>
+      <form method ="POST" action="/search/">
+          {% csrf_token %}
+          <div class="form-group">
+              <div class ="col-lg-5">
+                  <input type="text" name="srch" class="form-control" placeholder="Search">
+              </div><br>
+               <label class ="col-lg-2">
+                  <button type="submit" class="btn btn-danger" > Search </button>
+               </label>
+
+          </div>
+
+      </form><br><br>
+  </div>
+{% if sr %}
+  {% for recipe in sr %}
+     <article class="media content-section">
+      <div class="media-body">
+          <p style="color:brown;"> Ingredients: {{ recipe.ingredient1}}, {{ recipe.ingredient2}}, {{ recipe.ingredient3}}, {{ recipe.ingredient4}}, {{ recipe.ingredient5}}</p>
+          <h2><a class="article-title" href="{% url 'recipes-detail' recipe.id %}"> {{ recipe.title }}</a></h2>
+      </div>
+    </article>
+  {% endfor %}
+{%endif %}
+{% endblock content%}
