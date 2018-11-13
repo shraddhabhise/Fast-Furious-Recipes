@@ -37,12 +37,12 @@ def home(request):
 def search(request):
     if request.method == "POST":
         sh = request.POST['srch']
-        print(sh);
+
         if sh:
-            match = Recipes.objects.filter(Q(ingredient1__icontains=sh) | Q(ingredient2__icontains=sh) | Q(ingredient3__icontains=sh) | Q(ingredient4__icontains=sh) | Q(ingredient5__icontains=sh))
+            match = Recipes.objects.filter(Q(title__icontains=sh))
 
             context = {'sr': match}
-            print(context)
+
             if match:
                     return render(request, 'recipes/search.html', context)
             else:
