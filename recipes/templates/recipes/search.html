@@ -21,7 +21,7 @@
   {% for recipe in sr %}
      <article class="media content-section">
       <div class="media-body">
-          <p style="color:brown;"> Ingredients: {{ recipe.ingredient1}}, {{ recipe.ingredient2}}, {{ recipe.ingredient3}}, {{ recipe.ingredient4}}, {{ recipe.ingredient5}}</p>
+          <p style="color:brown;"> Ingredients: {{ recipe.ingredients}}</p>
           <h2><a class="article-title" href="{% url 'recipes-detail' recipe.id %}"> {{ recipe.title }}</a></h2>
       </div>
     </article>
