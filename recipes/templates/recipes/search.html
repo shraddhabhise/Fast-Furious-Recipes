@@ -1,30 +1,37 @@
 
 {% extends "recipes/base.html" %}
 {% block content%}
-  <div class="container">
-      <h1> Search Recipes</h1>
-      <form method ="POST" action="/search/">
-          {% csrf_token %}
-          <div class="form-group">
-              <div class ="col-lg-5">
-                  <input type="text" name="srch" class="form-control" placeholder="Search">
-              </div><br>
-               <label class ="col-lg-2">
-                  <button type="submit" class="btn btn-danger" > Search </button>
-               </label>
 
-          </div>
+      <article class="media content-section">
+        <div class="media-body">
+                <legend class="border-bottom mb-4">Search Recipe</legend>
+                <form method ="POST" action="/search/">
+                {% csrf_token %}
+                    <div class="form-group">
+                        <div class ="col-lg-5">
+                            <input type="text" name="srch" class="form-control" placeholder="Search">
+                        </div>  <br>
+                       <label class ="col-lg-2">
+                          <button type="submit" class="btn btn-danger" > Search </button>
+                       </label>
+                    </div>
+                </form>
+        </div>
+      </article>
 
-      </form><br><br>
-  </div>
-{% if sr %}
-  {% for recipe in sr %}
-     <article class="media content-section">
-      <div class="media-body">
-          <p style="color:brown;"> Ingredients: {{ recipe.ingredients}}</p>
-          <h2><a class="article-title" href="{% url 'recipes-detail' recipe.id %}"> {{ recipe.title }}</a></h2>
-      </div>
-    </article>
-  {% endfor %}
-{%endif %}
+      {% if sr %}
+        {% for recipe in sr %}
+            <article class="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <h3><a class="article-title" href="{% url 'recipes-detail' recipe.id %}"> Recipe: <font color = "green"> {{ recipe.title }}</font></a></h3>
+                    </div>
+                        <h5>Ingredients: </h5> <p>{{ recipe.ingredients}}</p>
+                          <p> Date Posted:  {{recipe.date_posted}} </p>
+                </div>
+            </article>
+        {% endfor %}
+      {%endif %}
 {% endblock content%}
+
+

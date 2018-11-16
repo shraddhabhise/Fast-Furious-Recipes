@@ -1,19 +1,22 @@
+
 {% extends "recipes/base.html" %}
 {% block content %}
    <article class="media content-section">
       <div class="media-body">
-          <p style="color:brown;"> Ingredients: {{ object.ingredients}}</p>
-          <h2 class="article-title" href="#" > {{ object.title }}</h2>
-          <p class="article-content">Procedure: {{ object.content }}</p>
-        <div class="article-metadata">
-          <p style="color:blue;"> Recipe by: {{object.author}}</p>
-          {% if object.author == user %}
-          <div>
-            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'recipes-update' object.id %}">Update</a>
-            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'recipes-delete' object.id %}">Delete</a>
+          <div class="article-metadata">
+            <h3 class="article-title" href="#" > Recipe: <font color = "green"> {{ object.title }} </font></h3>
+
           </div>
-        {% endif %}
-        </div>
-      </div>
+            <h5>Ingredients: </h5> <p>  {{ object.ingredients}}</p>
+
+              <h5 class="article-content"> Procedure: </h5>
+                  <p> {{ object.content }}</p>
+              <p> Date Posted:  {{object.date_posted}} </p>
+              <h6 style="color:orange ; font-style:italic"> Recipe by:  {{object.author}} </h6>
+              {% if object.author == user %}
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'recipes-update' object.id %}">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'recipes-delete' object.id %}">Delete</a>
+              {% endif %}
+          </div>
     </article>
 {% endblock content %}
