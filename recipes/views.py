@@ -6,6 +6,7 @@ from django.db.models import Q
 
 #Class based views to create forms
 from django.views.generic import (
+    ListView,
     DetailView,
     CreateView,
     UpdateView,
@@ -52,6 +53,13 @@ def search(request):
 
     return render(request, 'recipes/search.html')
 
+class RecipesListView(ListView):
+    model = Recipes
+    template_name = 'recipes/home.html'
+    context_object_name = 'recipes'
+    ordering = ['-date_posted']
+    paginate_by = 3
+
 class RecipesDetailView(DetailView):
     model = Recipes
 
@@ -87,8 +95,6 @@ class RecipesDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
-
-
 
 def about(request):
     return render(request, 'recipes/about.html')
