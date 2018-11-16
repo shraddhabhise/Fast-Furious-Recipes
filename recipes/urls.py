@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from .views import (
+    RecipesListView,
     RecipesDetailView,
     RecipesCreateView,
     RecipesUpdateView,
@@ -8,7 +9,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path('', views.home, name='recipes-home'),
+    path('', RecipesListView.as_view(), name='recipes-home'),
     path('search/', views.search, name='recipes-search'),
     path('about/', views.about, name='recipes-about'),
     path('register/', views.about, name='register'),
