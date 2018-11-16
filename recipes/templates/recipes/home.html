@@ -4,9 +4,36 @@
   {% for recipe in recipes %}
      <article class="media content-section">
       <div class="media-body">
-          <p style="color:brown;"> Ingredients: {{ recipe.ingredients}}</p>
-          <h2><a class="article-title" href="{% url 'recipes-detail' recipe.id %}"> {{ recipe.title }}</a></h2>
+      <div class="article-metadata">
+          <h3><a class="article-title" href="{% url 'recipes-detail' recipe.id %}"> Recipe: <font color = "green"> {{ recipe.title }}</font></a></h3>
+            <p> <small class="text-muted"> Date Posted:  {{recipe.date_posted}} </small></p>
+      </div>
+          <h5>Ingredients: </h5> <p>  {{ recipe.ingredients}}</p>
       </div>
     </article>
   {% endfor %}
+
+<div align="center">
+  {% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" style="text-align: center" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    {% endif %}
+</div>
 {% endblock content%}
