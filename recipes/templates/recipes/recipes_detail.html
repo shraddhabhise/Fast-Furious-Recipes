@@ -11,7 +11,6 @@
 
               <h5 class="article-content"> Procedure: </h5>
                   <p> {{ object.content }}</p>
-              <p> Date Posted:  {{object.date_posted}} </p>
               <h6 style="color:orange ; font-style:italic"> Recipe by:  {{object.author}} </h6>
               {% if object.author == user %}
                 <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'recipes-update' object.id %}">Update</a>
