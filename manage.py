@@ -1,6 +1,10 @@
 #!/usr/bin/env python
 import os
 import sys
+
+#Reference for few functionalities: tutorials of corey schafer from youtube
+#https://www.youtube.com/watch?v=UmljXZIypDc
+
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fullstack_project.settings')
     try:
