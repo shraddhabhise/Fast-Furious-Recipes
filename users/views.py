@@ -5,6 +5,10 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
 
 def register(request):
+    '''
+    :param request: request data
+    :return: renders register.html
+    '''
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
@@ -18,6 +22,10 @@ def register(request):
 
 @login_required
 def profile(request):
+    '''
+    :param request: request data
+    :return: redirects/renders profile.html
+    '''
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
