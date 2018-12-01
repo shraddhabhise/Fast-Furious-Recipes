@@ -8,6 +8,9 @@ from .views import (
     RecipesDeleteView
 )
 
+'''
+The urls and their corresponding action views are mapped below
+'''
 urlpatterns = [
     path('', RecipesListView.as_view(), name='recipes-home'),
     path('search/', views.search, name='recipes-search'),

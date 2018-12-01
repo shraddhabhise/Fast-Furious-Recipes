@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 
 #Class based views to create forms
+
 from django.views.generic import (
     ListView,
     DetailView,
@@ -30,12 +31,20 @@ recipes=[
 ]
 
 def home(request):
+    '''
+    :param request: request data
+    :return: renders home.html
+    '''
     context={
         'recipes': Recipes.objects.all()
     }
     return render(request,'recipes/home.html', context)
 
 def search(request):
+    '''
+    :param request data:
+    :return: renders search.html
+    '''
     if request.method == "POST":
         sh = request.POST['srch']
 
@@ -54,6 +63,9 @@ def search(request):
     return render(request, 'recipes/search.html')
 
 class RecipesListView(ListView):
+    '''
+    class based view to list the recipes
+    '''
     model = Recipes
     template_name = 'recipes/home.html'
     context_object_name = 'recipes'
@@ -61,10 +73,16 @@ class RecipesListView(ListView):
     paginate_by = 3
 
 class RecipesDetailView(DetailView):
+    '''
+    class based view to show the details of recipes
+    '''
     model = Recipes
 
 
 class RecipesCreateView(LoginRequiredMixin, CreateView):
+    '''
+    class based view to create recipes
+    '''
     model = Recipes
     fields = ['title', 'ingredients', 'content']
 
@@ -73,6 +91,9 @@ class RecipesCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 class RecipesUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    '''
+    class based view to update recipes
+    '''
     model = Recipes
     fields = ['title', 'ingredients', 'content']
 
@@ -87,6 +108,9 @@ class RecipesUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return False
 
 class RecipesDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    '''
+    class based view to delete the recipes
+    '''
     model = Recipes
     success_url = '/'
 
@@ -97,4 +121,8 @@ class RecipesDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
 def about(request):
+    '''
+    :param request: request data
+    :return: renders about.html
+    '''
     return render(request, 'recipes/about.html')

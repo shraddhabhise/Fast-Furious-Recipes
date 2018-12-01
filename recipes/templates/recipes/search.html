@@ -1,3 +1,4 @@
+<!-- This page is responsible to display a form for searching of recipes according to the title of recipe -->
 
 {% extends "recipes/base.html" %}
 {% block content%}
@@ -18,6 +19,8 @@
                 </form>
         </div>
       </article>
+
+<!-- This div is responsible for displaying the searched recipes -->
 
       {% if sr %}
         {% for recipe in sr %}

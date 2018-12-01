@@ -1,3 +1,5 @@
+<!-- This page is responsible for listing all the recipes created by authorized user of this website,
+which has name, date posted and ingredients used in recipes -->
 
 {% extends "recipes/base.html" %}
 {% block content%}
@@ -13,6 +15,7 @@
     </article>
   {% endfor %}
 
+<!-- This div is responsible for pagination. 3 recipes are listed on one page according to this code snippet -->
 <div align="center">
   {% if is_paginated %}
 
