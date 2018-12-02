@@ -5,6 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.db.models import Q
 
 #Class based views to create forms
+# code functionality reference: https://www.youtube.com/watch?v=-s7e_Fy6NRU&index=10&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p
 
 from django.views.generic import (
     ListView,
