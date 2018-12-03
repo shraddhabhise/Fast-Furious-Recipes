@@ -25,7 +25,13 @@ For authorized user:
   
 # Installation 
 
-Anaconda,  Pillow==5.2.0, Django==2.1.2, Crispy forms of Django
+- pip install django (2.1 is installed)
+
+- Download and install anaconda     (from https://www.anaconda.com/download/#macos, in order to use few anaconda features) and follow https://docs.anaconda.com/anaconda/install/mac-os/
+
+- pip install pillow            (install pillow for image feature of user profile in python) 
+
+- pip install django-crispy-forms       (Crispy forms of Django)
 
 # Steps to Run:
 conda create -n venv
