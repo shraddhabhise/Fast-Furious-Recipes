@@ -1,6 +1,7 @@
 <!-- This page is a form for creating of recipes. This uses crispy forms to have full control in order to write customized forms-->
 <!-- code functionality reference: https://www.youtube.com/watch?v=-s7e_Fy6NRU&index=10&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p -->
-
+<!-- Using csrf token provided by django middleware to protect the site from attacks,
+mainly used in POST forms: https://docs.djangoproject.com/en/2.1/ref/csrf/-->
 {% extends "recipes/base.html" %}
 {% load crispy_forms_tags %}
    {% block content %}

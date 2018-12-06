@@ -1,5 +1,7 @@
 <!-- This html page is responsible for creating register form using crispy forms of django -->
 <!-- code reference: https://www.youtube.com/watch?v=q4jPR-M0TAQ&index=6&list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p-->
+<!-- Using csrf token provided by django middleware to protect the site from attacks,
+mainly used in POST forms: https://docs.djangoproject.com/en/2.1/ref/csrf/-->
 
 {% extends "recipes/base.html" %}
 {% load crispy_forms_tags %}
