@@ -37,6 +37,7 @@ def home(request):
     :return: renders home.html
     '''
     context={
+        #retrieves all the database data and store in a object
         'recipes': Recipes.objects.all()
     }
     return render(request,'recipes/home.html', context)
@@ -46,9 +47,11 @@ def search(request):
     :param request data:
     :return: renders search.html
     '''
+
+    #if request method is post, then retrieve the data from post form
     if request.method == "POST":
         sh = request.POST['srch']
-
+        #if post data is not empty, then filter the database objects on tittle of recipes, matching the post data
         if sh:
             match = Recipes.objects.filter(Q(title__icontains=sh))
 
@@ -66,6 +69,8 @@ def search(request):
 class RecipesListView(ListView):
     '''
     class based view to list the recipes
+    listing is done based on the date posted
+    On each page 3 recipes are listed
     '''
     model = Recipes
     template_name = 'recipes/home.html'
@@ -76,6 +81,7 @@ class RecipesListView(ListView):
 class RecipesDetailView(DetailView):
     '''
     class based view to show the details of recipes
+    when we click on recipe title, this view is resonsible to show the details of that recipe
     '''
     model = Recipes
 
@@ -94,6 +100,7 @@ class RecipesCreateView(LoginRequiredMixin, CreateView):
 class RecipesUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     '''
     class based view to update recipes
+    And just showing update facility to user who has created that recipe
     '''
     model = Recipes
     fields = ['title', 'ingredients', 'content']
@@ -111,6 +118,7 @@ class RecipesUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 class RecipesDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     '''
     class based view to delete the recipes
+    And just showing delete facility to user who has created that recipe
     '''
     model = Recipes
     success_url = '/'

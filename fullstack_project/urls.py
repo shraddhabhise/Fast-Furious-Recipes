@@ -8,7 +8,7 @@ from django.conf.urls.static import static
 from users import views as user_views
 
 """
-urls to route for admin, register, profile, login and logout pages.
+urls to route for admin, register, profile, login and logout views/templates.
 """
 urlpatterns = [
     path('admin/', admin.site.urls),

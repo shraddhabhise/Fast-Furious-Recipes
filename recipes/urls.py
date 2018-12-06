@@ -10,6 +10,7 @@ from .views import (
 
 '''
 The urls and their corresponding action views are mapped below
+urls for search, about, register, recipe details, recipe update, recipe delete and recipe create are listed below
 '''
 urlpatterns = [
     path('', RecipesListView.as_view(), name='recipes-home'),

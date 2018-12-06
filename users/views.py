@@ -10,6 +10,8 @@ def register(request):
     :param request: request data
     :return: renders register.html
     '''
+    #if the request method is post and if form is valid, then save it and redirect to login
+    #else if form is not valid again render the same register form
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
