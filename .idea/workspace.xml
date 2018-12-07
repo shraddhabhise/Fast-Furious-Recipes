@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae9e5bfc-f0f5-4ebe-9983-cf108a37ee79" name="Default" comment="changed url">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/signals.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/signals.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/static/recipes/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/static/recipes/main.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,26 +16,7 @@
     <favorites_list name="fullstack_project" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/users/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="43" column="96" selection-start-line="43" selection-start-column="96" selection-end-line="43" selection-end-column="96" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users/templates/profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="1" column="99" lean-forward="true" selection-start-line="1" selection-start-column="99" selection-end-line="1" selection-end-column="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -64,7 +44,6 @@
         <option value="$PROJECT_DIR$/users/urls.py" />
         <option value="$PROJECT_DIR$/users/models.py" />
         <option value="$PROJECT_DIR$/recipes/models.py" />
-        <option value="$PROJECT_DIR$/recipes/static/recipes/main.css" />
         <option value="$PROJECT_DIR$/recipes/templates/recipes/home.html" />
         <option value="$PROJECT_DIR$/recipes/templates/recipes/base.html" />
         <option value="$PROJECT_DIR$/fullstack_project/settings.py" />
@@ -80,6 +59,7 @@
         <option value="$PROJECT_DIR$/users/templates/register.html" />
         <option value="$PROJECT_DIR$/users/signals.py" />
         <option value="$PROJECT_DIR$/users/views.py" />
+        <option value="$PROJECT_DIR$/recipes/static/recipes/main.css" />
       </list>
     </option>
   </component>
@@ -92,6 +72,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -107,6 +88,19 @@
             <path>
               <item name="fullstack_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="fullstack_project" type="462c0819:PsiDirectoryNode" />
+              <item name="recipes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fullstack_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fullstack_project" type="462c0819:PsiDirectoryNode" />
+              <item name="recipes" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fullstack_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fullstack_project" type="462c0819:PsiDirectoryNode" />
+              <item name="recipes" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="recipes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -128,7 +122,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,7 +393,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.84375" visible="true" weight="0.24947146" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32969698" />
@@ -423,21 +415,21 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.84375" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="2" sideWeight="0.15515152" side_tool="true" weight="0.24947146" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32969698" />
+      <window_info anchor="bottom" id="Version Control" order="3" visible="true" weight="0.37939394" />
       <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Find" order="5" />
+      <window_info anchor="bottom" id="Python Console" order="0" />
+      <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="3" visible="true" weight="0.37939394" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="5" />
       <window_info id="Favorites" order="0" sideWeight="0.15625" side_tool="true" visible="true" weight="0.24947146" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Python Console" order="0" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -507,13 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recipes/static/recipes/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recipes/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -565,13 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" column="64" selection-start-line="22" selection-start-column="64" selection-end-line="22" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="5" column="109" lean-forward="true" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
         </state>
       </provider>
     </entry>
@@ -672,17 +650,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users/templates/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="1" column="99" lean-forward="true" selection-start-line="1" selection-start-column="99" selection-end-line="1" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="43" column="96" selection-start-line="43" selection-start-column="96" selection-end-line="43" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-90">
+          <caret line="5" column="109" lean-forward="true" selection-start-line="5" selection-start-column="109" selection-end-line="5" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="99" lean-forward="true" selection-start-line="1" selection-start-column="99" selection-end-line="1" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipes/static/recipes/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-890">
+          <caret column="44" selection-start-column="44" selection-end-column="44" />
         </state>
       </provider>
     </entry>
