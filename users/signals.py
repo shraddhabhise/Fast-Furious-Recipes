@@ -26,4 +26,5 @@ def save_profile(sender, instance, **kwargs):
     :param kwargs: args
     :return: nothing
     '''
+    # saves profile instance
     instance.profile.save()

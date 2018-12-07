@@ -29,6 +29,8 @@ def profile(request):
     :param request: request data
     :return: redirects/renders profile.html
     '''
+    #if form request is post, retrieve post data for user form and profile form and save the information and on success
+    # redirect to profile.html
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -39,6 +41,7 @@ def profile(request):
             messages.success(request, f'Your account has been updated !')
             return redirect('profile')
     else:
+        #if form request is not post render profile form with userform and profile form details.
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
     context = {
